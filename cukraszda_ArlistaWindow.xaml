@@ -1,0 +1,28 @@
+<Window x:Class="CukraszdaWPF.ArlistaWindow"
+        xmlns="http://microsoft.com"
+        xmlns:x="http://microsoft.com"
+        Title="Itallap / Árlista" Height="450" Width="450" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="ÁRLISTA" FontSize="24" FontWeight="Bold" Foreground="DarkOrange" 
+                   HorizontalAlignment="Center" Margin="0,0,0,20" Grid.Row="0"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="SpSutemenyek"/>
+        </ScrollViewer>
+
+        <Button x:Name="BtnRendel" Content="RENDEL" Width="100" Height="30" Grid.Row="2" 
+                HorizontalAlignment="Center" Margin="0,15,0,0" Click="BtnRendel_Click">
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Számlát kér" Click="SzamlatKer_Click"/>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+    </Grid>
+</Window>
